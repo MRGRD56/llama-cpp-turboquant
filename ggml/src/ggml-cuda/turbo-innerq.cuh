@@ -9,8 +9,10 @@
 #if defined(_WIN32) && !defined(__MINGW32__)
 #  ifdef GGML_BACKEND_BUILD
 #    define TURBO_IQ_API __declspec(dllexport)
-#  else
+#  elif defined(GGML_BACKEND_SHARED)
 #    define TURBO_IQ_API __declspec(dllimport)
+#  else
+#    define TURBO_IQ_API
 #  endif
 #else
 #  define TURBO_IQ_API __attribute__((visibility("default")))
