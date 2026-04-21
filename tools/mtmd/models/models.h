@@ -33,6 +33,11 @@ struct clip_graph_qwen3vl : clip_graph {
     ggml_cgraph * build() override;
 };
 
+struct clip_graph_step3vl : clip_graph {
+    clip_graph_step3vl(clip_ctx * ctx, const clip_image_f32 & img) : clip_graph(ctx, img) {}
+    ggml_cgraph * build() override;
+};
+
 struct clip_graph_youtuvl : clip_graph {
     clip_graph_youtuvl(clip_ctx * ctx, const clip_image_f32 & img) : clip_graph(ctx, img) {}
     ggml_cgraph * build() override;
@@ -95,6 +100,11 @@ struct clip_graph_conformer : clip_graph {
 
 struct clip_graph_glm4v : clip_graph {
     clip_graph_glm4v(clip_ctx * ctx, const clip_image_f32 & img) : clip_graph(ctx, img) {}
+    ggml_cgraph * build() override;
+};
+
+struct clip_graph_hunyuanocr : clip_graph {
+    clip_graph_hunyuanocr(clip_ctx * ctx, const clip_image_f32 & img) : clip_graph(ctx, img) {}
     ggml_cgraph * build() override;
 };
 
